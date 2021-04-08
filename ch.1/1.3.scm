@@ -1,0 +1,8 @@
+(define (square x) (* x x))
+(define (squaresum x y) (+ (square x) (square y))) 
+(define (sumoflargest2of3squre x y z) 
+(cond ((and (>= (+ x y) (+ y z)) (>= (+ x y) (+ x z))) (squaresum x y))
+((and (>= (+ x z) (+ x y)) (>= (+ x z) (+ y z))) (squaresum x z))
+(else (squaresum y z))
+))
+(sumoflargest2of3squre 1 2 3)
